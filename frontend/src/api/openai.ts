@@ -29,6 +29,8 @@ interface CreateOptions {
 	action: Action
 }
 
+const localstorageSystemPrompt = window.localStorage.getItem('systemPrompt');
+
 export const systemPrompt = `Objective: Create a UI component that accurately reflects the visual and interactive specifications provided in the Figma design or screenshot.
  
 Context: You are a frontend engineer and you are tasked with generating a UI component based on detailed design specifications from either a Figma file or a screenshot. The component should replicate the design’s visual appearance, layout, and behavior as closely as possible. Your designs should be responsive and adaptable across all devices (Desktop/ Mobile/ Tablet). You have to ensure about good code practices including code comments.
@@ -186,7 +188,7 @@ emoji: 🎉
 	const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
 		{
 			role: 'system',
-			content: sp
+			content: localstorageSystemPrompt || sp
 		}
 	]
 
