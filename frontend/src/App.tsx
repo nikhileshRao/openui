@@ -21,6 +21,8 @@ import 'jotai-devtools/styles.css'
 // const Index = lazy(async () => import('pages/Index'))
 const AI = lazy(async () => import('pages/AI'))
 
+
+
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<>
@@ -34,6 +36,8 @@ const router = createBrowserRouter(
 )
 
 export default function App(): ReactElement {
+
+	console.log("This is a test")
 	const systemDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 	const darkMode = useAtomValue(darkModeAtom)
 
